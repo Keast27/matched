@@ -9,6 +9,7 @@ public class AppManager : MonoBehaviour
     public GameObject Logger;
     private SwipeDirection direction;
     [SerializeField] float speed;
+    bool interested;
     void Start()
     {
         sortDates();
@@ -53,32 +54,33 @@ public class AppManager : MonoBehaviour
     {
         bool swiped = dates[0].GetComponent<Date>().swiped;
         bool offScreen = dates[0].GetComponent<Date>().offScreen;
-        if (!offScreen && direction == SwipeDirection.Left)
+        if (direction == SwipeDirection.Left)
         {
             dates[0].transform.Translate(Vector3.left * Time.deltaTime * speed);
             swiped = true;
-            // resizeList();
-           // Logger.GetComponent<SwipeLogger>().swipeDir = SwipeDirection.None;
+            
+            interested = false;
             Debug.Log("Reject");
         }
-        if(!offScreen && direction == SwipeDirection.Right)
+        if( direction == SwipeDirection.Right)
         {
-            dates[0].transform.Translate(-Vector3.left * Time.deltaTime * speed);
+            dates[0].transform.Translate(Vector3.right * Time.deltaTime * speed);
             swiped = true;
-            //resizeList();
-          
+            interested = true;
             Debug.Log("Interested");
-        } else if (offScreen)
+        } 
+        if ((dates[0].transform.position.x <= -6 && !interested) || (dates[0].transform.position.x >= 6 && interested))
         {
             Logger.GetComponent<SwipeLogger>().swipeDir = SwipeDirection.None;
             dates[0].SetActive(false);
-            if (dates.Count != 1) resizeList();
+            if (dates.Count != 1) resizeList(dates[0]);
             //  dates[0].transform.Translate(Vector3.zero);
         }
     }
 
-    void resizeList()
+    void resizeList(GameObject date)
     {
+        /*
         if (dates.Count > 0 && dates != null)
         {
             List<GameObject> tempList = new List<GameObject>();
@@ -89,5 +91,12 @@ public class AppManager : MonoBehaviour
             }
             dates = tempList;
         }
+        */
+        GameObject save = date;
+        dates.RemoveAt(0);
+        save.SetActive(true);
+        dates.Add(save);
+        save.transform.position = new Vector2(0, 0.77f);
+
     }
 }
