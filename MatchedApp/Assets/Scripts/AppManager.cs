@@ -19,24 +19,27 @@ public class AppManager : MonoBehaviour
     {
         if(dates.Count == 1)
         {
-            dates[0].GetComponent<SpriteRenderer>().sortingOrder = 2;
-            dates[0].transform.GetChild(0).gameObject.GetComponent<SpriteRenderer>().sortingOrder = 1;
-
+            //dates[0].GetComponent<SpriteRenderer>().sortingOrder = 2;
+            dates[0].transform.GetChild(0).gameObject.GetComponent<SpriteRenderer>().sortingOrder = 2;
+            dates[0].GetComponent<Date>().canvas.gameObject.SetActive(true);
+            // CanvasObject.GetComponent<Canvas>().enabled = false;
         }
         if (dates.Count >= 2)
         {
-            dates[0].GetComponent<SpriteRenderer>().sortingOrder = 2;
+            //dates[0].GetComponent<SpriteRenderer>().sortingOrder = 2;
             dates[0].transform.GetChild(0).gameObject.GetComponent<SpriteRenderer>().sortingOrder = 1;
-          
+            dates[0].GetComponent<Date>().canvas.gameObject.SetActive(true);
 
-            dates[1].GetComponent<SpriteRenderer>().sortingOrder = 0;
+            //dates[1].GetComponent<SpriteRenderer>().sortingOrder = 0;
             dates[1].transform.GetChild(0).gameObject.GetComponent<SpriteRenderer>().sortingOrder = -1;
+            dates[1].GetComponent<Date>().canvas.gameObject.SetActive(false);
             if (dates.Count >= 2)
             {
                 for (int i = 2; i < dates.Count; i++)
                 {
-                    dates[i].GetComponent<SpriteRenderer>().sortingOrder = -5;
+                    //dates[i].GetComponent<SpriteRenderer>().sortingOrder = -5;
                     dates[i].transform.GetChild(0).gameObject.GetComponent<SpriteRenderer>().sortingOrder = -5;
+                    dates[i].GetComponent<Date>().canvas.gameObject.SetActive(false);
                 }
             }
         }

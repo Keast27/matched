@@ -7,5 +7,7 @@ public class Date : MonoBehaviour
     public bool swiped = false;
     public bool offScreen = false;
 
+
+    public Canvas canvas;
     
 }
