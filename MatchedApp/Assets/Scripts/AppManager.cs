@@ -99,7 +99,7 @@ public class AppManager : MonoBehaviour
         dates.RemoveAt(0);
         save.SetActive(true);
         dates.Add(save);
-        save.transform.position = new Vector2(0, 0.77f);
+        save.transform.position = new Vector2(0, save.transform.position.y);
 
     }
 }
