@@ -710,7 +710,7 @@ PrefabInstance:
     - target: {fileID: 3303505443410451729, guid: 593070272382373429a07079b42c86bd,
         type: 3}
       propertyPath: m_IsActive
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 3303505443410451733, guid: 593070272382373429a07079b42c86bd,
         type: 3}
@@ -850,7 +850,7 @@ PrefabInstance:
     - target: {fileID: 3303505444271994636, guid: 593070272382373429a07079b42c86bd,
         type: 3}
       propertyPath: m_AnchoredPosition.y
-      value: -2199
+      value: -2137.9
       objectReference: {fileID: 0}
     - target: {fileID: 3303505444271994637, guid: 593070272382373429a07079b42c86bd,
         type: 3}
@@ -1683,7 +1683,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!212 &581999681
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -2596,7 +2596,7 @@ PrefabInstance:
     - target: {fileID: 3303505444271994636, guid: 593070272382373429a07079b42c86bd,
         type: 3}
       propertyPath: m_AnchoredPosition.x
-      value: 268.7
+      value: 236.3
       objectReference: {fileID: 0}
     - target: {fileID: 3303505444271994636, guid: 593070272382373429a07079b42c86bd,
         type: 3}
@@ -2606,7 +2606,9 @@ PrefabInstance:
     - target: {fileID: 3303505444271994637, guid: 593070272382373429a07079b42c86bd,
         type: 3}
       propertyPath: m_Text
-      value: "wanna put your anchor in\n my harbor?"
+      value: 'wanna put your anchor in
+
+        my harbor?'
       objectReference: {fileID: 0}
     - target: {fileID: 3303505444271994637, guid: 593070272382373429a07079b42c86bd,
         type: 3}
@@ -6667,7 +6669,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!4 &2098619754
 Transform:
   m_ObjectHideFlags: 0
