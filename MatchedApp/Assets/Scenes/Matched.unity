@@ -850,7 +850,7 @@ PrefabInstance:
     - target: {fileID: 3303505444271994636, guid: 593070272382373429a07079b42c86bd,
         type: 3}
       propertyPath: m_AnchoredPosition.y
-      value: -2189
+      value: -2139
       objectReference: {fileID: 0}
     - target: {fileID: 3303505444271994637, guid: 593070272382373429a07079b42c86bd,
         type: 3}
@@ -1683,7 +1683,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!212 &581999681
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -4835,7 +4835,7 @@ PrefabInstance:
     - target: {fileID: 3303505444271994636, guid: 593070272382373429a07079b42c86bd,
         type: 3}
       propertyPath: m_AnchoredPosition.y
-      value: -2175
+      value: -2136
       objectReference: {fileID: 0}
     - target: {fileID: 3303505444271994637, guid: 593070272382373429a07079b42c86bd,
         type: 3}
@@ -6669,7 +6669,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!4 &2098619754
 Transform:
   m_ObjectHideFlags: 0
@@ -7024,7 +7024,7 @@ PrefabInstance:
     - target: {fileID: 3303505444271994636, guid: 593070272382373429a07079b42c86bd,
         type: 3}
       propertyPath: m_AnchoredPosition.y
-      value: -2180
+      value: -2157
       objectReference: {fileID: 0}
     - target: {fileID: 3303505444271994637, guid: 593070272382373429a07079b42c86bd,
         type: 3}
