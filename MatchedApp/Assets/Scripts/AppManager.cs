@@ -6,13 +6,49 @@ public class AppManager : MonoBehaviour
 {
     // Start is called before the first frame update
     public List<GameObject> dates;
+    [SerializeField] private List<GameObject> blended;
     public GameObject Logger;
     private SwipeDirection direction;
     [SerializeField] float speed;
     bool interested;
+
+    public List<GameObject> women;
+    public List<GameObject> MEN;
+    public bool bibibi;
     void Start()
     {
+        dates = women;
+        silenceMen();
+        blend();
         sortDates();
+    }
+    void silenceMen()
+    {
+        foreach(GameObject man in MEN)
+        {
+            if (!bibibi)
+            {
+                man.SetActive(false);
+                man.transform.GetChild(0).gameObject.GetComponent<SpriteRenderer>().sortingOrder = -5;
+            } else
+            {
+                man.SetActive(true);
+            }
+        }
+    }
+    void blend()
+    {
+        int menCount = 0;
+        for(int i = 0; i < women.Count; i++)
+        {
+            blended.Add(women[i]);
+
+            if(i % 3 == 0 && menCount < 4)
+            {
+                blended.Add(MEN[menCount]);
+                menCount++;
+            }
+        }
     }
 
     void sortDates()
@@ -40,6 +76,11 @@ public class AppManager : MonoBehaviour
                     //dates[i].GetComponent<SpriteRenderer>().sortingOrder = -5;
                     dates[i].transform.GetChild(0).gameObject.GetComponent<SpriteRenderer>().sortingOrder = -5;
                     dates[i].GetComponent<Date>().canvas.gameObject.SetActive(false);
+
+                    if(i % 3 == 0 && bibibi)
+                    {
+                        
+                    }
                 }
             }
         }
@@ -51,6 +92,16 @@ public class AppManager : MonoBehaviour
         direction = Logger.GetComponent<SwipeLogger>().swipeDir;
         changePortrait();
         sortDates();
+        silenceMen();
+        if (bibibi)
+        {
+            dates = blended;
+
+        }
+        else
+        {
+            dates = women;
+        }
     }
 
     void changePortrait()

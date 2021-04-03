@@ -12,7 +12,7 @@ public class Restart : MonoBehaviour
     //Change me to change the touch phase used.
     TouchPhase touchPhase = TouchPhase.Ended;
 
-    [SerializeField] private bool showGreenScreen = false;
+   // [SerializeField] private bool showGreenScreen = false;
  
     void Update()
     {
@@ -28,7 +28,7 @@ public class Restart : MonoBehaviour
             //We now raycast with this information. If we have hit something we can process it.
             RaycastHit2D hitInformation = Physics2D.Raycast(touchPosWorld2D, Camera.main.transform.forward);
 
-            if (hitInformation.collider != null)
+            if (hitInformation.collider != null && hitInformation.collider.tag == "Settings")
             {
                 //We should have hit something with a 2D Physics collider!
                 GameObject touchedObject = hitInformation.transform.gameObject;
