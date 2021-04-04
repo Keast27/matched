@@ -13,14 +13,17 @@ public class AppManager : MonoBehaviour
     bool interested;
 
     public List<GameObject> women;
+    public List<GameObject> femaleLeads;
     public List<GameObject> MEN;
     public bool bibibi;
     void Start()
     {
-        dates = women;
-        silenceMen();
+        
         blend();
+        silenceMen();
         sortDates();
+        organizeWomen();
+        dates = women;
     }
     void silenceMen()
     {
@@ -30,11 +33,36 @@ public class AppManager : MonoBehaviour
             {
                 man.SetActive(false);
                 man.transform.GetChild(0).gameObject.GetComponent<SpriteRenderer>().sortingOrder = -5;
+                foreach (GameObject lead in femaleLeads)
+                {
+                    lead.SetActive(true);
+                }
             } else
             {
                 man.SetActive(true);
+                foreach(GameObject lead in femaleLeads)
+                {
+                    lead.SetActive(false);
+                    lead.transform.GetChild(0).gameObject.GetComponent<SpriteRenderer>().sortingOrder = -5;
+                }
             }
         }
+    }
+
+    void organizeWomen()
+    {
+        List<GameObject> TempList = new List<GameObject>();
+
+        foreach(GameObject lead in femaleLeads)
+        {
+            TempList.Add(lead);
+        }
+        foreach(GameObject date in women)
+        {
+            TempList.Add(date);
+        }
+
+        women = TempList;
     }
     void blend()
     {
